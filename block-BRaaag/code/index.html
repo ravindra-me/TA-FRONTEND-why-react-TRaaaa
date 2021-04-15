@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>My movie watch list</h1>
+      <input
+        type="text"
+        class="input width-100 form-control"
+        placeholder="Add Movie List"
+      />
+      <ul class="root">
+        <ul>
+          <li class="flex justify-between align-center">
+            <p>text</p>
+            <button>To watch</button>
+          </li>
+        </ul>
+      </ul>
+    </div>
+    <script
+      crossorigin
+      src="https://unpkg.com/react@17/umd/react.development.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"
+    ></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script type="text/babel">
+      let input = document.querySelector(".input");
+      let ui = document.querySelector("ul");
+      let arr = JSON.parse(localStorage.getItem("arr")) || [];
+
+      function isHandleWatch(event) {
+        let index = +event.target.getAttribute("data-id");
+        arr[index].isWatch = !arr[index].isWatch;
+        localStorage.setItem("arr", JSON.stringify(arr));
+        createUi(arr);
+      }
+      function createUi(arr) {
+        let todoArray = arr.map((element, index) => {
+          return (
+            <li className="flex justify-between align-center">
+              <p>{element.name}</p>
+              <button onClick={isHandleWatch} data-id={index}>
+                {element.isWatch ? "Watched" : "To Watch"}
+              </button>
+            </li>
+          );
+        });
+        ReactDOM.render(todoArray, ui);
+      }
+      input.addEventListener("keyup", (event) => {
+        let value = event.target.value;
+        if (event.keyCode === 13 && value) {
+          arr.push({ name: value, isWatch: false });
+          localStorage.setItem("arr", JSON.stringify(arr));
+          createUi(arr);
+          event.target.value = "";
+        }
+      });
+
+      createUi(arr);
+    </script>
+  </body>
+</html>
