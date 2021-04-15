@@ -1,0 +1,260 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+  background-color: gainsboro;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+.container {
+  max-width: 1350px;
+  width: 100%;
+  margin: 0 auto;
+}
+.img {
+  object-fit: cover;
+  width: 100%;
+}
+.font-0 {
+  font-size: 0;
+}
+
+.relative {
+  position: relative;
+}
+.absolute {
+  position: absolute;
+}
+
+h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: black;
+}
+h3 {
+  color: coral;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+.category {
+  background: red;
+  padding: 0.5rem;
+  top: 100%;
+  transform: translateY(-100%);
+  left: 0;
+  font-weight: 700;
+  font-size: 1.25rem;
+}
+.text {
+  color: rgb(175, 175, 175);
+  font-size: 1.25rem;
+  line-height: 1.2;
+  margin-bottom: 2rem;
+}
+
+.date {
+  width: 80px;
+  height: 80px;
+  background: tomato;
+  border-radius: 50%;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 10%;
+  right: 5%;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: white;
+}
+
+.flex {
+  display: flex;
+}
+.justify-between {
+  justify-content: space-between;
+}
+.align-center {
+  align-items: center;
+}
+.width-100 {
+  width: 100%;
+}
+
+.display-none {
+  display: none;
+}
+.form-control {
+  padding: 1rem;
+  outline: none;
+  border: none;
+  font-size: 1.25rem;
+  border-radius: 0.25rem;
+  text-align: center;
+}
+/* li {
+  padding: 1rem 0;
+  margin-top: 1rem;
+  border-bottom: 1px solid red;
+}
+
+button {
+  border: 1px solid red;
+  padding: 0.5rem 1rem;
+  background-color: salmon;
+  color: aliceblue;
+  font-weight: 700;
+  border-radius: 0.25rem;
+  font-size: 1.25rem;
+  cursor: pointer;
+} */
+p {
+  font-size: 1.5rem;
+  color: whitesmoke;
+}
+.card-content {
+  background: whitesmoke;
+  background-color: white;
+  padding: 1rem;
+}
+.comment-sec span {
+  margin-right: 1rem;
+  font-size: 1.15rem;
+}
+
+.flex-30 {
+  flex: 0 1 32%;
+}
+
+img {
+  height: 300px;
+}
