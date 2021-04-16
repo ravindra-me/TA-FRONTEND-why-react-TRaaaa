@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="root"></div>
+    <script
+      crossorigin
+      src="https://unpkg.com/react@17/umd/react.development.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"
+    ></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script type="text/babel">
+      function clickMe() {
+        alert("Hello React Event");
+      }
+      function clickMeEvent() {
+        alert(`To learn React use https://reactjs.org`);
+        alert(`React and ReactDOM works together`);
+        alert(`Babel helps in writing JSX`);
+      }
+
+      function clickMeName(name) {
+        alert(`Hello ${name}`);
+      }
+
+      function clickFruits(fruit) {
+        alert(`${fruit}`);
+      }
+      let fruits = [
+        { id: "apple", value: "🍎 apple" },
+        { id: "orange", value: "🍊 orange" },
+        { id: "grape", value: "🍇 grape" },
+        { id: "pear", value: "🍐 pear" },
+      ];
+      let btn = (
+        <>
+          <button onClick={() => clickMe()}>Click Me</button>
+          <button onClick={() => clickMeEvent()}>How can i help you?</button>
+          <div>
+            <button onClick={() => clickMeName("Arya")}>Arya</button>
+            <button onClick={() => clickMeName("John")}>John</button>
+            <button onClick={() => clickMeName("Bran")}>Bran</button>
+          </div>
+          {fruits.map((element) => (
+            <button key={element.id} onClick={() => clickFruits(element.id)}>
+              {element.value}
+            </button>
+          ))}
+        </>
+      );
+      ReactDOM.render(btn, document.querySelector(".root"));
+    </script>
+  </body>
+</html>
