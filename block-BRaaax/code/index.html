@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
     <div id="root"></div>
@@ -19,21 +20,24 @@
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
     <script type="text/babel">
       function Button(props) {
+        function getStyle() {
+          let { size, type } = props;
+          return `${size ? size : "small"} ${type ? type : "primary"}`;
+        }
         return (
           <button
-            type={props.type ? props.type : ""}
-            onClickHandler={() => alert("You Clicked Me!")}
-            disabled={props.disabled ? props.disabled : true}
-            size={props.size ? props.size : ""}
+            onClick={props.onClickHandler}
+            disabled={props.disabled}
+            className={getStyle()}
           >
-            {props.label}
+            {props.label || "button"}
           </button>
         );
       }
       ReactDOM.render(
         <>
           <Button label="Button" />
-          <Button size="small" label="Button" type="secondary" />
+          <Button size="small" label="colorfull" type="secondary" />
         </>,
         document.querySelector("#root")
       );

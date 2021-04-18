@@ -1,0 +1,20 @@
+.small {
+  padding: 1rem;
+}
+.midium {
+  padding: 1.25rem 2rem;
+}
+.large {
+  padding: 1.5rem 2.5rem;
+}
+
+.primary {
+  background-color: black;
+  color: white;
+}
+.seconadry {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+.ternary {
+  background-color: rgba(0, 0, 0, 0.1);
+}
