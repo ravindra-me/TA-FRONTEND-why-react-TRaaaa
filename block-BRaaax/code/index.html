@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script
+      crossorigin
+      src="https://unpkg.com/react@17/umd/react.development.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"
+    ></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script type="text/babel">
+      function Button(props) {
+        return (
+          <button
+            type={props.type ? props.type : ""}
+            onClickHandler={() => alert("You Clicked Me!")}
+            disabled={props.disabled ? props.disabled : true}
+            size={props.size ? props.size : ""}
+          >
+            {props.label}
+          </button>
+        );
+      }
+      ReactDOM.render(
+        <>
+          <Button label="Button" />
+          <Button size="small" label="Button" type="secondary" />
+        </>,
+        document.querySelector("#root")
+      );
+    </script>
+  </body>
+</html>
